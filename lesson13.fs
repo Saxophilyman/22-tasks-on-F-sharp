@@ -22,8 +22,11 @@ let rec del_even = function
     | [] -> []
 
 // 39.3
-let rec multiplicity x xs = ...
-
+let rec multiplicity x = function
+    | [] -> 0
+    | head :: tail when head = x -> 1 + multiplicity x tail
+    | head :: tail -> multiplicity x tail
+    
 // 39.4
 let rec split = ...
 
