@@ -14,3 +14,17 @@ zip ([x1; x2; ...], [y1; y2; ...]) = [(x1,y1); (x2,y2); ...]
 Если длины входных списков неодинаковы, генерируйте исключение.
 
 
+// 39.1
+let rec rmodd = ...
+
+// 39.2
+let rec del_even = ...
+
+// 39.3
+let rec multiplicity x xs = ...
+
+// 39.4
+let rec split = ...
+
+// 39.5
+let rec zip (xs1,xs2) = ...
