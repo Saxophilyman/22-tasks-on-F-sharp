@@ -15,7 +15,10 @@ zip ([x1; x2; ...], [y1; y2; ...]) = [(x1,y1); (x2,y2); ...]
 
 
 // 39.1
-let rec rmodd = ...
+let rec rmodd = function
+    | [] -> []
+    | [_] -> []
+    | _ :: x :: tail -> x :: rmodd tail
 
 // 39.2
 let rec del_even = ...
