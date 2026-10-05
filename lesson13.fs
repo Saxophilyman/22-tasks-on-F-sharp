@@ -20,7 +20,13 @@ let rec rmodd = function
     | _ :: x :: tail -> x :: rmodd tail
 
 // 39.2
-let rec del_even = ...
+let rec del_even = function
+    | [] -> []
+    | head :: tail ->
+        if head % 2 = 0 then
+            del_even tail
+        else
+            head :: del_even tail
 
 // 39.3
 let rec multiplicity x xs = ...
