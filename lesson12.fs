@@ -15,7 +15,10 @@ let upto n =
     loop n []
 
 // 34.2
-let rec dnto = ...
+let rec dnto n =
+    match n with
+    | 0 -> []
+    | _ -> n :: dnto (n - 1)
 
 // 34.3
 let rec evenn = ...
