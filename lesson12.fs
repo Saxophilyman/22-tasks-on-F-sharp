@@ -1,6 +1,4 @@
-34.1. Напишите функцию upto: int -> int list, которая работает так:
 
-upto n = [1; 2; ...; n].
 34.2. Напишите функцию dnto: int -> int list, которая работает так:
 
 downto n = [n; n-1; n-2; ...; 1].
@@ -8,7 +6,13 @@ downto n = [n; n-1; n-2; ...; 1].
 
 
 // 34.1
-let rec upto = ...
+let upto n =
+    let rec loop k acc =
+        match k with
+        | 0 -> acc
+        | _ -> loop (k - 1) (k :: acc)
+
+    loop n []
 
 // 34.2
 let rec dnto = ...
