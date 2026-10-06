@@ -77,7 +77,11 @@ let rec delete = function
     | n, head :: tail -> head :: delete (n, tail)
 
 // 40.3.3
-let rec sort = ...
+let rec sort = function
+    | [] -> []
+    | xs ->
+        let m = Option.get (smallest xs)
+        m :: sort (delete (m, xs))
 
 // 40.4
 let rec revrev = ...
