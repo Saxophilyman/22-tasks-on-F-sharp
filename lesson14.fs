@@ -80,7 +80,10 @@ let rec smallest = function
             Some minTail
 
 // 40.3.2
-let rec delete (n, xs) = ...
+let rec delete = function
+    | _, [] -> []
+    | n, head :: tail when n = head -> tail
+    | n, head :: tail -> head :: delete (n, tail)
 
 // 40.3.3
 let rec sort = ...
