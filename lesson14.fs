@@ -32,7 +32,7 @@ let rec intersect = function
 // 40.2.4
 let rec plus = function
     | [], xs2 -> xs2
-	| xs1, [] -> xs1
+    | xs1, [] -> xs1
     | head1 :: tail1, head2 :: tail2 ->
         if head1 = head2 then
             head1 :: head2 :: plus (tail1, tail2)
