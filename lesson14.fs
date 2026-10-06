@@ -29,7 +29,11 @@ let rec sum (p, xs) =
     | _ :: tail -> sum (p, tail)
 
 // 40.2.1
-let rec count (xs, n) = ...
+let rec count = function
+    | [], _ -> 0
+    | head :: tail, n when head < n -> count (tail, n)
+    | head :: tail, n when head = n -> 1 + count (tail, n)
+    | head :: tail, n when head > n -> 0
 
 // 40.2.2
 let rec insert (xs, n) = ...
