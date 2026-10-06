@@ -68,7 +68,16 @@ let rec minus = function
 
 
 // 40.3.1
-let rec smallest = ...
+let rec smallest = function
+    | [] -> None
+    | [x] -> Some x
+    | head :: tail ->
+        let minTail = Option.get (smallest tail)
+
+        if head < minTail then
+            Some head
+        else
+            Some minTail
 
 // 40.3.2
 let rec delete (n, xs) = ...
