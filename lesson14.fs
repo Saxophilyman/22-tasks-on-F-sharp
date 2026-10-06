@@ -84,4 +84,6 @@ let rec sort = function
         m :: sort (delete (m, xs))
 
 // 40.4
-let rec revrev = ...
+let rec revrev = function
+    | [] -> []
+    | head :: tail -> revrev tail @ [List.rev head]
