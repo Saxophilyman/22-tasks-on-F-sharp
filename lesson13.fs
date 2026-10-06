@@ -28,7 +28,12 @@ let rec multiplicity x = function
     | head :: tail -> multiplicity x tail
     
 // 39.4
-let rec split = ...
+let rec split = function
+    | [] -> ([], [])
+    | [head] -> ([head], [])
+    | head1 :: head2 :: tail ->
+        let (xs1, xs2) = split tail
+        (head1 :: xs1, head2 :: xs2)
 
 // 39.5
 let rec zip (xs1,xs2) = ...
