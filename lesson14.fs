@@ -55,7 +55,17 @@ let rec plus = function
             head2 :: plus (head1 :: tail1, tail2)
 
 // 40.2.5
-let rec minus (xs1, xs2) = ...
+let rec minus = function
+    | [], _ -> []
+    | xs1, [] -> xs1
+    | head1 :: tail1, head2 :: tail2 ->
+        if head1 = head2 then
+            minus (tail1, tail2)
+        elif head1 < head2 then
+            head1 :: minus (tail1, head2 :: tail2)
+        else
+            minus (head1 :: tail1, tail2)
+
 
 // 40.3.1
 let rec smallest = ...
