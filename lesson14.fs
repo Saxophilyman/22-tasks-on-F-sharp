@@ -22,7 +22,11 @@ x1 <= x2 <= ... <= xn
 revrev [[1;2];[3;4;5]] = [[5;4;3];[2;1]]
 
 // 40.1
-let rec sum (p, xs) = ...
+let rec sum (p, xs) =
+    match xs with
+    | [] -> 0
+    | head :: tail when p head -> head + sum (p, tail)
+    | _ :: tail -> sum (p, tail)
 
 // 40.2.1
 let rec count (xs, n) = ...
