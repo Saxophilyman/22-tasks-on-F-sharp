@@ -36,4 +36,11 @@ let rec split = function
         (head1 :: xs1, head2 :: xs2)
 
 // 39.5
-let rec zip (xs1,xs2) = ...
+exception DifferentLengths
+
+let rec zip (xs1, xs2) =
+    match (xs1, xs2) with
+    | [], [] -> []
+    | head1 :: tail1, head2 :: tail2 ->
+        (head1, head2) :: zip (tail1, tail2)
+    | [], _ | _, [] -> raise DifferentLengths
