@@ -36,7 +36,10 @@ let rec count = function
     | head :: tail, n when head > n -> 0
 
 // 40.2.2
-let rec insert (xs, n) = ...
+let rec insert = function
+    | [], n -> [n]
+    | head :: tail, n when head < n -> head :: insert (tail, n)
+    | head :: tail, n -> n :: head :: tail
 
 // 40.2.3
 let rec intersect (xs1, xs2) = ...
