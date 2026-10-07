@@ -14,4 +14,5 @@ let sum (p, xs) =
     List.fold (fun acc x -> if p x then acc + x else acc) 0 xs
     
 // 41.4.3
-let revrev = ...
+let revrev xs =
+    List.fold (fun acc x -> (List.rev x) :: acc) [] xs
