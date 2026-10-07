@@ -10,7 +10,8 @@ revrev [[1;2];[3;4;5]] = [[5;4;3];[2;1]]
 Реализуйте revrev с помощью List.fold или List.foldBack.
 
 // 41.4.1
-let list_filter f xs = ...
+let list_filter f xs =
+    List.foldBack (fun x acc -> if f x then x :: acc else acc) xs []
 
 // 41.4.2
 let sum (p, xs) = ...
