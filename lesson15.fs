@@ -1,8 +1,4 @@
-41.4.1. Напишите функцию list_filter, которая реализует стандартную функцию List.filter, с помощью List.foldBack.
 
-41.4.2. Напишите функцию sum(p, xs), где p -- предикат int -> bool, и xs -- список целых.
-Функция возвращает сумму тех элементов xs, для которых предикат истинен.
-Реализуйте sum с помощью List.fold или List.foldBack.
 
 41.4.3. Напишите функцию revrev, которая получает на вход список списков, и перевёртывает как порядок вложенных списков, так и порядок элементов внутри каждого вложенного списка.
 
@@ -14,7 +10,8 @@ let list_filter f xs =
     List.foldBack (fun x acc -> if f x then x :: acc else acc) xs []
 
 // 41.4.2
-let sum (p, xs) = ...
-
+let sum (p, xs) =
+    List.fold (fun acc x -> if p x then acc + x else acc) 0 xs
+    
 // 41.4.3
 let revrev = ...
