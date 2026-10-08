@@ -4,7 +4,15 @@
 Последовательность Фибоначчи начинается с двух значений 0,1, а n-й элемент равен сумме n-1 - го и n-2 - го элементов: 0,1,1,2,3,5,8,13,...
 
 // 47.4.1
-let f n = ...
+let f n =
+    let mutable result = 1
+    let mutable i = 1
+
+    while i <= n do
+        result <- result * i
+        i <- i + 1
+
+    result
 
 // 47.4.2
 let fibo n = ...
