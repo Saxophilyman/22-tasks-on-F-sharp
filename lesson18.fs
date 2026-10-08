@@ -15,4 +15,13 @@ let f n =
     result
 
 // 47.4.2
-let fibo n = ...
+let fibo n =
+    let mutable a = 0
+    let mutable b = 1
+
+    for _ in 1 .. n do
+        let next = a + b
+        a <- b
+        b <- next
+
+    a
