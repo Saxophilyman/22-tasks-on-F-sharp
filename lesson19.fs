@@ -30,4 +30,6 @@ let rec fibo2 n c =
                 c (x + y)))
 
 // 48.4.3
-let rec bigList n k = ...
+let rec bigList n k =
+    if n = 0 then k []
+    else bigList (n - 1) (fun res -> k (1 :: res))
