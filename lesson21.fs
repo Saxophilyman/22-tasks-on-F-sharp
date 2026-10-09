@@ -7,7 +7,14 @@
 
 
 // 50.2.1
-let fac_seq = ...
+let fac_seq =
+    let rec loop n acc =
+        seq {
+            yield acc
+            yield! loop (n + 1) (acc * (n + 1))
+        }
+
+    loop 0 1
 
 // 50.2.2
 let seq_seq = ...
